@@ -11,11 +11,42 @@
 # else:
 #     print("возраст 1 больше всех")
 
-age1 = 1000
-age2 = 500
-age3 = 200
 
-if age1>age2:
-    print("денег хватит")
-elif age2>age3:
-    print("денег не хватит")
+import random
+
+hp = 100
+speed = 0
+dist = 400
+
+yetti = 1
+tree = 2
+rock = 3
+
+while True:
+
+    сhanceEnemy = random.randit(0,10)
+    if chanceEnemy == rock:
+        print("вы столкнулись с камнем")
+        hp -= 5
+        print(f"у вас осталось {hp} жизней")
+    elif chanceEnemy == yetti:
+        print("вы столкнулись с йети")
+        hp = -= 10
+        print(f"у вас осталось {hp} жизней")
+    elif chanceEnemy == tree:
+        print("вы влетели в дерево")
+        hp -= 8
+        print(f"у вас осталось {hp} жизней")
+    
+    speed += 1
+    dist -= speed
+    print(f"\nвы летите со скоростью {speed} км/с")
+    print(f"осталось проехать {dist} километров")
+    print(f"у вас осталось {hp} жизней")
+    if(dist <= 0):
+        print("УРА! победа!")
+        break
+    if(hp <= 0):
+        print("вас сожрали")
+        break
+
